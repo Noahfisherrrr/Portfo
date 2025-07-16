@@ -8,6 +8,7 @@
 a {
     text-decoration: none;
 }
+/* slider section */
 .banner {
     position: relative;
     width: 100%;
@@ -98,8 +99,6 @@ a {
     filter: drop-shadow(0 0 5px #00000050);
 }
 
-
-
 .slide.active {
     opacity: 1;
     position: relative;
@@ -137,5 +136,21 @@ a {
 .nextBtn:hover, .prevBtn:hover {
     background-color: rgba(0, 0, 0, 0.1);
     border-radius: 25%;
+}
 
+/* detail info */
+.detail-info{
+    display: flex;
+}
+
+.aboutInfo{
+
+}
+
+.profImage{
+
+}
+
+.skills{
+    
 }

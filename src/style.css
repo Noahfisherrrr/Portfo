@@ -34,7 +34,7 @@ a {
     top: 0;
     left: 15%;
 }
-.slider a{
+.roca {
     font-family: 'Poppins';
     font-size: 40px;
     color: #000;
@@ -81,6 +81,21 @@ a {
     font-weight: 400;
     color: #212121;
 
+}
+.icn-container{
+    display: flex;
+    justify-content: start;
+    gap: 5px;
+    z-index: 5;
+}
+.icn-container a img {
+    max-width: 35px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+.icn-container a img:hover{
+    transform: translateY(-5px);
+    filter: drop-shadow(0 0 5px #00000050);
 }
 
 

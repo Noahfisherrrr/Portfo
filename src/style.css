@@ -1,74 +1,126 @@
 /* CSS Reset */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
-
 .banner {
-  position: relative;
-  width: 100%;
-  height: 75vh;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: #DDDDDD;
 }
 
 .slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: #DDDDDD;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+
 }
 
 .slide {
-  min-width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  position: absolute;
-  top: 0;
-  left: 15%; 
+    max-width: 650px;
+    min-width: 100%;
+    height: 100%;
+    opacity: 0;
+    /* transition: opacity 0.5s ease; */
+    position: absolute;
+    top: 0;
+    left: 15%;
+}
+.slider a{
+    font-family: 'Poppins';
+    font-size: 40px;
+    color: #000;
+    font-weight: 900;
+    position: relative;
+    left: 25px;
+    top: 20px;
+}
+.slider h3{
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-family: 'Poppins';
+    font-size: 43px;
+    font-weight: 900;
+    color: #373737;
+    text-shadow: 1px 1px 2px #000;
+
+}
+.info-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    top: 200px;
+    right: 200px;
+}
+.info-content p:first-of-type {
+    font-family: 'Glacial Indifference';
+    font-size: 41px;
+    color: #212121;
+}
+.info-content h4{
+   font-family: 'Glacial Indifference';
+   font-size: 71px;
+   font-weight: 700;
+   color: #212121;
+
+
+}
+.about{
+    font-family: 'Glacial Indifference';
+    font-size: 25px;
+    font-weight: 400;
+    color: #212121;
+
 }
 
+
+
 .slide.active {
-  opacity: 1;
-  position: relative;
+    opacity: 1;
+    position: relative;
 }
 
 .slide img {
-  max-width: 400px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    max-width: 550px;
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+    border-radius: 5px;
+
 }
 
 .buttons {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
 }
 
-.nextBtn,
-.prevBtn {
-  background: transparent;
-  color: rgb(117, 27, 27);
-  border: none;
-  padding: 18px;
-  cursor: pointer;
-  font-size: 28px;
-  border-radius: 10%;
-  z-index: 10;
-  transition: background-color 0.3s ease, border-radius 0.3s ease;
+.nextBtn, .prevBtn {
+    background: transparent;
+    color: rgb(117, 27, 27);
+    border: none;
+    padding: 18px;
+    cursor: pointer;
+    font-size: 28px;
+    border-radius: 10%;
+    z-index: 10;
+    transition: background-color 0.3s ease, border-radius 0.3s ease;
 }
+.nextBtn:hover, .prevBtn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 25%;
 
-.nextBtn:hover,
-.prevBtn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 25%;
 }

@@ -52,12 +52,101 @@
     </section>
     <section class="detail-info">
         <div class="aboutMe">
+            <h2 class="fullname">Noe Kvirkvelia</h2>
+            <p>FRONTEND DEVELOPER</p>
+            <p class="moreInfo">
+                My dream to code began at age 8 after watching Hackers (1995). 
+                Though we had no computer, my passion grew.
+                 I later worked as a sound engineer, 
+                 but left to pursue frontend development with HTML, CSS, and JavaScript full-time.
+            </p>
+            <button class="hireMe" id="hireMeBtn">Hire Me</button>
+            <div id="hireMeModal" class="hireMeModal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <form id="hireForm" action="https://borjomi.loremipsum.ge/api/send-message" method="post" enctype="text/plain">
+                        <label>
+                            <span>Fullname</span><br>
+                            <input type="text" name="name" required>
+                        </label><br><br>
+
+                        <label>
+                            <span>E-MAIL</span><br>
+                            <input type="email" name="email" required>
+                        </label><br><br>
+                        <label>
+                            <span>Message</span><br>
+                            <textarea name="message" rows="4" required></textarea>
+                        </label><br><br>
+
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div> 
 
         </div>
-        <div class="profImage"></div>
-        <div class="skills"></div>
-    </section>
+        <div class="profImage">
+            <img src="images/pics/2.png" alt="profile pic">
+        </div>
+        <div class="skills">
+            <div class="skill" data-percent="90">
+                <p class="skill-name">HTML<span>(90%)</span></p>
+            <div class="bar">
+            <div class="fill"></div>
+            </div>
+            </div>
 
+            <div class="skill" data-percent="80">
+                <p class="skill-name">CSS<span>(80%)</span></p>
+                <div class="bar">
+                <div class="fill"></div>
+                </div>
+            </div>
+
+            <div class="skill" data-percent="60">
+                <p class="skill-name">JavaScript<span>(60%)</span></p>
+                <div class="bar">
+                <div class="fill"></div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <div class="contact-info-cont">
+        <div class="sec-info-cont">
+            <div class="sec-info-logo">
+                <a href="tel:+995577172662">
+                <img src="images/1.svg" alt="phone favicon">
+                </a>
+            </div>
+            <div class="sec-info-det">
+                <h4>Phone Number</h4>
+                <a href="tel:+995577172662">+995 577 17 26 62</a>
+            </div>
+        </div>
+        <div class="sec-info-cont">
+            <div class="sec-info-logo">
+                 <a href="https://maps.app.goo.gl/2FpbV25PX65UKQ6K7" target="_blank" >
+                    <img src="images/2.svg" alt="location favicon">
+                </a>   
+            </div>
+            <div class="sec-info-det">
+                <h4>user Address</h4>
+                <a href="https://maps.app.goo.gl/2FpbV25PX65UKQ6K7" target="_blank">Tbilisi, Georgia</a>
+            </div>
+        </div>
+        <div class="sec-info-cont">
+            <div class="sec-info-logo">
+                <a href="mailto:kvirkvelianoah@gmail.com">
+                    <img src="images/3.svg" alt="mail favicon">
+                </a>
+            </div>
+            <div class="sec-info-det">
+                <h4>Email Address</h4>
+                <a href="mailto:kvirkvelianoah@gmail.com">kvirkvelianoah@gmail.com</a>
+            </div>
+        </div>
+    </div>
     
 
 

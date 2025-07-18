@@ -11,6 +11,8 @@ a {
 /* slider section */
 .banner {
     position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -140,17 +142,203 @@ a {
 
 /* detail info */
 .detail-info{
+    max-width: 1400px;
+    width: 100%;
     display: flex;
-}
-
-.aboutInfo{
-
-}
-
-.profImage{
+    margin: 135px auto;
+    gap: 65px;
+    font-family: 'Glacial Indifference';
 
 }
 
-.skills{
+.aboutMe {
+    max-width: 330px;
+    text-align: right;
+    margin-top: 80px;
+}
+.fullname{
+    font-size: 40px;
+    font-weight: 700;
+}
+.aboutMe p:first-of-type{
+    font-family: 'Muli' ;
+    font-size: 14px;
+    color: #DAAE19;
+    font-weight: 500;
+}
+.moreInfo{
+    font-family: 'Muli' ;
+    font-size: 15px;
+    margin-top: 30px;
+    color: #555555;
+    font-weight: 500;
+}
+.hireMe{
+    margin-top: 50px;
+    padding: 15px;
+    max-width: 150px;
+    width: 100%;
+    background-color: #E93656;
+    color: #fff;
+    border:none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.hireMe:hover{
+    background-color: #45131c;
+}
+/* hireme popup */
+.hireMeModal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #00000077;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: left;
+  position: relative;
+  width: 350px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+
+#hireMeBtn:hover {
+  background-color: #005f73;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+form button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+form button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+
+.profImage img{
+   max-width: 430px;
+   width: 100%;
+   object-fit: cover;
+   border-radius: 5px;
+}
+
+.skills {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.skill {
+    margin-bottom: 25px;
+}
+
+.skill-name {
+    font-family: 'Glacial Indifference';
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    color: #212121;
+}
+
+.bar {
+    width: 100%;
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    width: 0;
+    background-color: #3f51b5;
+    border-radius: 2px;
+    transition: width 1s ease-in-out;
+}
+.contact-info-cont{
+    max-width: 1920px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #131A36;
+    padding: 50px 0;
+    gap: 45px;
+    color: #FFFFFF;
     
+}
+.sec-info-cont{
+    display: flex;
+    max-width: 295px;
+    width: 100%;
+    justify-content: space-between;
+    gap: 15px;
+}
+.sec-info-logo{
+    border: 2px dashed #fff;
+    border-radius: 50%;
+    padding: 30px;
+    transition: background-color 0.5s ease-in, border 1s ease-out;
+    cursor: pointer;
+}
+.sec-info-logo:hover{
+    background-color: #28a745;
+    border: none;
+}
+.sec-info-logo img{
+    width: 30px;
+    height: 30px;
+}
+.sec-info-det{
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    
+}
+.sec-info-det h4{
+    font-family: 'Glacial Indifference';
+    font-size: 25px;
+    font-family: 600;
+}
+.sec-info-det a{
+    font-family: 'Muli';
+    color: #fff;
+    text-decoration: none;
 }

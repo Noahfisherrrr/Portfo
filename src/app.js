@@ -10,6 +10,8 @@ const closeBtn = document.querySelector(".close-btn");
 
 const skillsSection = document.querySelector('.skills');
 
+lucide.createIcons();
+
 let currentSlideIndex = 0;
 let intervalId = null;
 

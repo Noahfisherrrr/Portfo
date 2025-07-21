@@ -90,3 +90,55 @@ skillsSection.addEventListener('mouseleave', () => {
     fill.style.width = '0';
   });
 });
+
+// Reviews
+const reviews = [
+    {
+        text: "Exceptional service and attention to detail. Highly recommended!",
+        avatar: "https://i.pravatar.cc/100?img=45",
+        title: "UX Designer",
+        name: "Mau Thomas"
+    },
+    {
+        text: "Truly professional work. The website runs flawlessly and looks amazing!",
+        avatar: "https://i.pravatar.cc/100?img=12",
+        title: "Freelancer",
+        name: "John Smith"
+    },
+    {
+        text: "Timely delivery, clean code, and great communication throughout the project.",
+        avatar: "https://i.pravatar.cc/100?img=25",
+        title: "Project Manager",
+        name: "Helen Lee"
+    }
+];
+
+let currentReview = 0;
+
+function updateReview(index) {
+    currentReview = index;
+    document.getElementById("review-text").textContent = reviews[index].text;
+    document.getElementById("review-avatar").style.backgroundImage = `url(${reviews[index].avatar})`;
+    document.getElementById("review-title").textContent = reviews[index].title;
+    document.getElementById("review-name").textContent = reviews[index].name;
+
+    document.querySelectorAll(".dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+    });
+}
+function nextReview(){
+    currentReview = (currentReview + 1) % reviews.length;
+    updateReview(currentReview);
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const dots = document.querySelectorAll(".review-section .dot");
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => updateReview(index));
+    });
+
+    updateReview(0);
+    setInterval(nextReview, 5000);
+});

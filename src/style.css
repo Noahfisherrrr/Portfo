@@ -421,3 +421,82 @@ form button[type="submit"]:hover {
 .service-item:hover .card-front {
     display: none;
 }
+.review-section {
+    margin: 80px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 1920px;
+    display: flex;
+    justify-content: center;
+    background-image: url(../images/clip.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 80px;
+}
+.review{
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+#review-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.6;
+    text-align: end;
+}
+.profile{
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px dotted #fff;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    text-align: start;
+    width: 100%;
+}
+#review-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: #E93656;
+}
+#review-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+}
+
+.dots {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #c6c2c2;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #c90a3a;
+}

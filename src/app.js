@@ -142,3 +142,25 @@ document.addEventListener("DOMContentLoaded", () => {
     updateReview(0);
     setInterval(nextReview, 5000);
 });
+
+// Categories
+
+const categoryItems = document.querySelectorAll(".categories li");
+const projectCards = document.querySelectorAll(".project-card");
+
+categoryItems.forEach(item => {
+    item.addEventListener("click", () => {
+        categoryItems.forEach(i => i.classList.remove("active"));
+        item.classList.add("active");
+
+        const filter = item.getAttribute("data-filter");
+
+        projectCards.forEach(card => {
+            const categories = card.getAttribute("data-category").split(" ");
+            const matches = filter === "all" || categories.includes(filter);
+
+            card.style.display = matches ? "block" : "none";
+        });
+    });
+});
+

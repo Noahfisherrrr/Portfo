@@ -10,7 +10,6 @@ a {
 }
 /* slider section */
 .banner {
-    position: relative;
     max-width: 1920px;
     margin: 0 auto;
     width: 100%;
@@ -18,35 +17,22 @@ a {
     overflow: hidden;
     background-color: #DDDDDD;
 }
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+.header {
+    max-width: 1920px;
     width: 100%;
-    height: 100%;
-
-}
-
-.slide {
-    max-width: 650px;
-    min-width: 100%;
-    height: 100%;
-    opacity: 0;
-    /* transition: opacity 0.5s ease; */
-    position: absolute;
-    top: 0;
-    left: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
 }
 .roca {
     font-family: 'Poppins';
     font-size: 40px;
     color: #000;
     font-weight: 900;
-    position: relative;
-    left: 25px;
-    top: 20px;
+    
 }
-.slider h3{
+.header h3{
     position: absolute;
     top: 20px;
     right: 25px;
@@ -57,13 +43,20 @@ a {
     text-shadow: 1px 1px 2px #000;
 
 }
-.info-content {
-    position: absolute;
+.banner-content {
+    width: 100%;
+    height: 100%;
     display: flex;
+    overflow: hidden;
+}
+
+
+.info-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     flex-direction: column;
-    gap: 15px;
-    top: 200px;
-    right: 200px;
+    gap: 10px;
 }
 .info-content p:first-of-type {
     font-family: 'Glacial Indifference';
@@ -100,10 +93,23 @@ a {
     transform: translateY(-5px);
     filter: drop-shadow(0 0 5px #00000050);
 }
+.slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    max-width: 550px;
+    min-width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+        
+}
 
 .slide.active {
-    opacity: 1;
-    position: relative;
+    display: flex;    
 }
 
 .slide img {
@@ -126,7 +132,7 @@ a {
 
 .nextBtn, .prevBtn {
     background: transparent;
-    color: rgb(117, 27, 27);
+    color: #751b1b;
     border: none;
     padding: 18px;
     cursor: pointer;
@@ -136,7 +142,7 @@ a {
     transition: background-color 0.3s ease, border-radius 0.3s ease;
 }
 .nextBtn:hover, .prevBtn:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #0000001a;
     border-radius: 25%;
 }
 
@@ -221,20 +227,35 @@ a {
 #hireMeBtn:hover {
     background-color: #005f73;
 }
-
+#hireForm span{
+    font-family: 'Glacial Indifference';
+    font-size: 15px;
+    font-weight: 600;
+    color: #212121;
+    text-align: start;
+    float: left;
+}
 input, textarea {
+    font-family: 'Glacial Indifference';
+    font-size: 14px;
+    color: #212121;
     width: 100%;
     padding: 8px;
     font-size: 14px;
     margin-top: 4px;
     box-sizing: border-box;
 }
+textarea {
+    
+    resize: none;
+    height: auto;
+}
 
 form button[type="submit"] {
     margin-top: 10px;
     padding: 10px;
     background-color: #28a745;
-    color: white;
+    color: #fff;
     border: none;
     font-weight: bold;
     cursor: pointer;
@@ -358,7 +379,7 @@ form button[type="submit"]:hover {
 .serv-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 35px;
     max-width: 1640px;
     margin: 0 auto;
     color: #222222;
@@ -372,8 +393,8 @@ form button[type="submit"]:hover {
     cursor: pointer;
     max-width: 285px;
     min-height: 360px;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
+    transition: transform 1.5s;
+    transform-style:preserve-3d;
     padding: 20px;
 }
 .service-item h3 {
@@ -402,12 +423,15 @@ form button[type="submit"]:hover {
     display: none;
     justify-content: center;
     align-items: center;
+    max-width: 285px;
+    width: 100%;
+    height: 100%;
     color: #fff;
     font-family: 'Muli';
     font-size: 14px;
     font-weight: 300;
     padding: 20px;
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
 
 }
 .service-item:hover{
@@ -612,12 +636,20 @@ form button[type="submit"]:hover {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
+.overlay a {
+    color: #fff;
+    font-family: 'Glacial Indifference';
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
 
 .project-card:hover .overlay {
     opacity: 1;
 }
 
 .project-card:hover img {
+   
     transform: scale(1.1);
 }
 

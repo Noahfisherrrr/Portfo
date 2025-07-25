@@ -164,3 +164,48 @@ categoryItems.forEach(item => {
     });
 });
 
+// contact us form
+
+
+const contactForm = document.getElementById('contactForm');
+const modal = document.getElementById('thankYouModal');
+const closeBtnContact = modal.querySelector('button');
+
+contactForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+
+    const name = formData.get("name").trim();
+    const email = formData.get("email").trim();
+    const website = formData.get("website").trim();
+    const message = formData.get("message").trim();
+
+    if (!name || !email || !website || !message) {
+        alert("All fields are required.");
+        return;
+    }
+
+    try {
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.status === 1) {
+            modal.style.display = 'flex';
+            contactForm.reset();
+        } else {
+            alert("Something went wrong. Try again.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Failed to send. Check your internet connection.");
+    }
+});
+
+closeBtnContact.addEventListener('click', () => {
+    modal.style.display = 'none';
+});

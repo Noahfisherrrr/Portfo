@@ -107,7 +107,7 @@ a {
 }
 
 .slide.active {
-    display: flex;    
+    display: flex;
 }
 
 .slide img {

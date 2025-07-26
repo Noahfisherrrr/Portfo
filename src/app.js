@@ -13,15 +13,15 @@ const skillsSection = document.querySelector('.skills');
 lucide.createIcons();
 
 let currentSlideIndex = 0;
-let intervalId = null;
+let slideTimeout = null;
 
 function showSlide(index){
-   slides.forEach((slide, i) => {
-    slide.classList.remove('active');
-    if (i === index) {
-        slide.classList.add('active')
-    }
-   });
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+            slide.classList.add('active');
+        }
+    });
 };
 
 function nextSlide() {
@@ -35,24 +35,28 @@ function prevSlide() {
 };
 
 function autoPlay() {
-    intervalId = setInterval(nextSlide, 5000);
+    slideTimeout = setTimeout(() => {
+        nextSlide();
+        autoPlay(); // recursive
+    }, 5000);
 };
 
 function stopPlay (){
-    clearInterval(intervalId);
+    clearTimeout(slideTimeout);
 };
+
 showSlide(currentSlideIndex);
 autoPlay();
 
 nextBtn.addEventListener('click', () => {
-    nextSlide();
     stopPlay();
+    nextSlide();
     autoPlay();
 });
 
 prevBtn.addEventListener('click', () => {
-    prevSlide();
     stopPlay();
+    prevSlide();
     autoPlay();
 });
 
@@ -61,13 +65,12 @@ slider.addEventListener('mouseleave', autoPlay);
 
 // hireme modal
 hireMeBtn.addEventListener("click", () => {
-    modalHire.style.display = "flex"
+    modalHire.style.display = "flex";
 });
 
 closeBtn.addEventListener("click", () => {
     modalHire.style.display = "none";
     form.reset();
-
 });
 
 window.addEventListener("click", (e) => {
@@ -126,11 +129,11 @@ function updateReview(index) {
         dot.classList.toggle("active", i === index);
     });
 }
+
 function nextReview(){
     currentReview = (currentReview + 1) % reviews.length;
     updateReview(currentReview);
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const dots = document.querySelectorAll(".review-section .dot");
@@ -144,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Categories
-
 const categoryItems = document.querySelectorAll(".categories li");
 const projectCards = document.querySelectorAll(".project-card");
 
@@ -165,8 +167,6 @@ categoryItems.forEach(item => {
 });
 
 // contact us form
-
-
 const contactForm = document.getElementById('contactForm');
 const modal = document.getElementById('thankYouModal');
 const closeBtnContact = modal.querySelector('button');

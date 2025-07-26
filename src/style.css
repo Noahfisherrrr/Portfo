@@ -24,6 +24,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
+    margin: 0 auto;
 }
 .roca {
     font-family: 'Poppins';
@@ -33,9 +34,6 @@ a {
     
 }
 .header h3{
-    position: absolute;
-    top: 20px;
-    right: 25px;
     font-family: 'Poppins';
     font-size: 43px;
     font-weight: 900;
@@ -318,6 +316,7 @@ form button[type="submit"]:hover {
     justify-content: center;
     background-color: #131A36;
     padding: 50px 0;
+    margin: 0 auto;
     gap: 45px;
     color: #FFFFFF;
     
@@ -810,6 +809,7 @@ form button[type="submit"]:hover {
 .footer-container {
     max-width: 1920px;
     width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -905,18 +905,20 @@ form button[type="submit"]:hover {
 
 /* Smart phones */
 @media (max-width: 599px) {
-    
+}   
 
 /* Tablets  */
 @media (min-width: 600px) and (max-width: 1023px) {
-    
+}
 
 /* Small Laptops  */
 @media (min-width: 1024px) and (max-width: 1279px) {
-    
+}
 
 /* Desktops (1280px and up) */
 @media (min-width: 1280px) {
-    
+}
+
 /* Orientation Based Queries */
 @media (orientation: landscape) {
+}

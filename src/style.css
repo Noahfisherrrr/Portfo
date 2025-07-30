@@ -121,6 +121,7 @@ a {
 
 .buttons {
     position: absolute;
+    max-width: 1920px;
     width: 100%;
     top: 50%;
     display: flex;
@@ -156,10 +157,13 @@ a {
 }
 
 .aboutMe {
-    max-width: 330px;
+    flex: 1;
     width: 100%;
     text-align: right;
-    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
 }
 .fullname{
     font-size: 40px;
@@ -174,7 +178,7 @@ a {
 .moreInfo{
     font-family: 'Muli' ;
     font-size: 15px;
-    margin-top: 30px;
+    margin-top: 25px;
     color: #555555;
     font-weight: 500;
 }
@@ -185,6 +189,10 @@ a {
     width: 100%;
     background-color: #E93656;
     color: #fff;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
     border:none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
@@ -244,8 +252,7 @@ input, textarea {
     margin-top: 4px;
     box-sizing: border-box;
 }
-textarea {
-    
+textarea {  
     resize: none;
     height: auto;
 }
@@ -265,29 +272,32 @@ form button[type="submit"]:hover {
     background-color: #218838;
 }
 
-
+/* skills */
+.profImage {
+    flex: 1;
+    width: 100%;
+    max-width: 300px;
+}
 .profImage img{
-    max-width: 430px;
+    max-width: 300px;
     width: 100%;
     object-fit: cover;
     border-radius: 5px;
 }
 
 .skills {
+    flex: 1;
     width: 100%;
-    max-width: 600px;
-    margin: 40px auto 0;
-    padding: 0 20px;
     box-sizing: border-box;
-}
-
-.skill {
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
 }
 
 .skill-name {
     font-family: 'Glacial Indifference';
-    font-size: 25px;
+    font-size: 28px;
     font-weight: 600;
     margin-bottom: 8px;
     display: flex;
@@ -297,7 +307,7 @@ form button[type="submit"]:hover {
 
 .bar {
     width: 100%;
-    height: 12px;
+    height: 15px;
     background-color: #e0e0e0;
     border-radius: 2px;
     overflow: hidden;
@@ -448,6 +458,8 @@ form button[type="submit"]:hover {
 .service-item:hover .card-front {
     display: none;
 }
+
+/* Review Section */
 .review-section {
     margin: 80px auto;
     text-align: center;
@@ -534,7 +546,7 @@ form button[type="submit"]:hover {
 }
 
 
-/* Cat */
+/* Categories */
 .recent-projects {
     max-width: 1920px;
     width: 100%;
@@ -546,7 +558,6 @@ form button[type="submit"]:hover {
 }
 
 
-/* Sidebar */
 .projects-container {
     display: flex;
     justify-content: center;
@@ -668,6 +679,7 @@ form button[type="submit"]:hover {
     display: flex;
     flex-direction: column;
     margin: 50px auto;
+    padding: 20px;
 }
 .latest-articles h2 {
     font-family: 'Glacial Indifference';
@@ -677,31 +689,43 @@ form button[type="submit"]:hover {
     margin-bottom: 50px;
     text-align: center;
 }
-.articles-container {
+.articles-content-container {
+    max-width: 1640px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.article-container {
     display: flex;
     justify-content: right;
     
+}
+.empty-space {
+    max-width: 110px;
+    width: 100%;
 }
 .article-float {
     display: flex;
     justify-content: left;
     flex-direction: row-reverse;
+
+    
 }
-.article-container {
+.article-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 725px;
+    max-width: 650px;
     min-height: 560px;
     width: 100%;
-    position: relative;
     overflow: hidden;
     padding: 15px;
     background-color: #fafafa;
 
 }
-.article-container h3 {
+.article-info h3 {
     font-family: 'Glacial Indifference';
     font-size: 30px;
     font-weight: 700;
@@ -721,6 +745,7 @@ form button[type="submit"]:hover {
     justify-content: center;
     max-width: 120px;
     width: 100%;
+    height: auto;
 }
 .year span{
     font-family: 'Glacial Indifference';
@@ -734,13 +759,13 @@ form button[type="submit"]:hover {
 
 }
 .article-image {
-    max-width: 700px;
+    max-width: 675px;
     width: 100%;
     height: 560px;
     object-fit: cover;
 }
 .article-image img {
-    max-width: 700px;
+    max-width: 675px;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -767,7 +792,7 @@ form button[type="submit"]:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 35px;
 }
 .partner-logo {
     width: 150px;
@@ -911,301 +936,254 @@ form button[type="submit"]:hover {
 
 
 /* media */
-@media (min-width: 1200px) {
-  body {
-    font-size: 18px;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
 
-  .banner {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 40px 20px;
+
+
+/*  Laptops: 1024px to 1439px  */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .header {
+    padding: 20px 40px;
   }
 
   .banner-content {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    gap: 40px;
     align-items: center;
-  }
-
-  .slider {
-    flex: 1 1 55%;
-    max-width: 600px;
-  }
-
-  .info-content {
-    flex: 1 1 40%;
-  }
-
-  .buttons {
-    position: absolute;
-    top: 50%;
-    width: 1140px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    pointer-events: auto;
-  }
-
-  .detail-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1140px;
-    margin: 60px auto;
     gap: 40px;
-  }
-
-  .aboutMe {
-    flex: 1 1 55%;
-  }
-
-  .profImage {
-    flex: 1 1 40%;
-  }
-
-  .skills {
-    max-width: 600px;
-    margin-top: 40px;
-  }
-
-  .services .serv-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    padding: 0 40px;
     max-width: 1140px;
     margin: 0 auto;
   }
 
-  .recent-projects {
-    max-width: 1140px;
-    margin: 60px auto;
-    padding: 0 20px;
+  .info-content {
+    text-align: left;
+    flex: 1;
+    width: 100%;
+  }
+
+  .info-content h4 {
+    font-size: 48px;
+  }
+
+  .info-content p:first-of-type {
+    font-size: 30px;
+  }
+
+  .about {
+    font-size: 20px;
+  }
+
+  .slider {
+    flex: 2;
+    max-width: 450px;
+    width: 100%;
   }
 
   .projects-container {
-    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     gap: 30px;
+    max-width: 1140px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+}
+
+
+
+/*  Tablets: 768px to 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .roca {
+    font-size: 30px;
   }
 
-  .sidebar {
-    flex: 0 0 200px;
+  .header h3 {
+    font-size: 24px;
   }
 
-  .projects-grid {
-    flex: 1 1 auto;
+  .banner-content {
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .info-content h4 {
+    font-size: 36px;
+  }
+
+  .icn-container a img {
+    max-width: 30px;
+  }
+
+  .detail-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 50px auto;
+  }
+  .aboutMe {
+    text-align: center;
+    align-items: center;
+    max-width: 400px;
+  }
+
+  .profImage {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .skills{
+    max-width: 500px;
+  }
+  .sec-info-cont{
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+  .sec-info-det {
+    display: none;
+  }
+
+  .serv-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 15px;
+  }
+}
+ 
+
+
+
+/* ===== Smartphones: 490px to 767px ===== */
+@media (min-width: 490px) and (max-width: 767px) {
+  .banner-content {
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
   }
 
-  .latest-articles,
-  .partners,
-  .footer-container {
-    max-width: 1140px;
-    margin: 60px auto;
-    padding: 0 20px;
-  }
-
-  .articles-container,
-  .partners-container {
-    display: flex;
-    gap: 30px;
-  }
-
-  .article-container {
-    flex: 1 1 33%;
-  }
-
-  footer.footer-container {
+  .info-content {
     text-align: center;
   }
+
+  .info-content h4 {
+    font-size: 32px;
+    color: #fff;
+  }
+
+  .info-content p:first-of-type {
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .about {
+    font-size: 18px;
+    color: #fff;
+  }
+
+  .slider {
+    width: 100%;
+    height: 200px;
+  }
+
+  .icn-container {
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .serv-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .review, .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info, .dots {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .projects-container, .sidebar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
 }
 
 
-@media (min-width: 1024px) {
-    .header {
-        padding: 20px 40px;
-    }
-    .banner-content {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        gap: 40px;
-        max-width: 1140px;
-        margin: 0 auto;
-        padding: 0 40px;
-    }
-    .info-content {
-        flex: 1;
-        text-align: left;
-        width: 100%;
-    }
-    .info-content h4 {
-        font-size: 48px;
-    }
-    .info-content p:first-of-type {
-        font-size: 30px;
-    }
-    .about {
-        font-size: 20px;
-    }
-    .slider {
-        flex: 2;
-        height: auto; 
-        max-width: 450px;
-        width: 100%;
-    }
-    .services{
-        padding: 20px;
-    }
-    .project-card {
-        max-width: 100%;
-    }
-    .projects-container {
-        display: flex;
-        flex-direction: row; 
-        align-items: flex-start;
-        gap: 30px;
-        max-width: 1140px;
-        margin: 40px auto;
-        padding: 0 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    
-    .roca {
-        font-size: 30px;
-    }
-    .header h3{
-        font-size: 24px;
-    }
-    .banner-content {
-        gap: 15px;
-        padding: 20px;
-    }
-    .info-content h4 {
-        font-size: 36px;
-    }
-    .icn-container a img {
-        max-width: 30px;
-    }
-    .detail-info {
-       display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
-    .profImage {
-        max-width: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    
-    
-    .sec-info-det {
-        display: none;
-    }
-    .sec-info-cont {
-        justify-content: center;
-        align-items: center;
-    }
-   
-    .serv-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        padding: 15px;
-    }
-}
+/* ===== Small Phones: Below 490px ===== */
 @media (max-width: 489px) {
-    .banner-content {
-        flex-direction: column;
-        align-items: center;
-    }
-    .info-content {
-        text-align: center; 
- 
-    }
-    .info-content p:first-of-type {
-        font-size: 24px;
-        color: #fff;
-    }
-    .info-content h4 {
-        font-size: 32px;
-            color: #fff;
-    }
-    .icn-container {
-        justify-content: center;
-        margin: 20px;
-    }
-    .about {
-        font-size: 18px;
-        color: #fff;
-    }
-    .slider {
-        width: 100%;
-        height: 200px;
-    }
-    .article-image {
-        height: 300px;
-    }
-    .sec-info-det {
-        display: none;
-    }
-    .serv-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 15px;
-    }
-    .service-item {
-        display: flex;
-        max-width: 100%;
-        justify-content: center;
-    }
-    .review {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .profile {
-        align-items: center;
-        justify-content: center;
-    }
-    .info {
-        text-align: center;
-    }
-    .dots {
-        flex-direction: row;
-        justify-content: center;
-    }
-    .projects-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .project-card {
-        max-width: 100%;
-        width: 100%;
-    }
-    .sidebar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .categories liv {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-    }
+  .banner-content {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .info-content {
+    text-align: center;
+  }
+
+  .info-content h4 {
+    font-size: 28px;
+    color: #fff;
+  }
+
+  .info-content p:first-of-type {
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .about {
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .slider {
+    width: 100%;
+    height: 200px;
+  }
+
+  .article-image {
+    height: 300px;
+  }
+
+  .serv-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .service-item {
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .review, .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info, .dots, .projects-container {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .sidebar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .categories liv {
+    flex-direction: column;
+    align-items: center;
+  }
 }

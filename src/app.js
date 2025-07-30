@@ -80,19 +80,26 @@ window.addEventListener("click", (e) => {
     }
 });
 
-skillsSection.addEventListener('mouseenter', () => {
-  document.querySelectorAll('.skill').forEach(skill => {
-    const fill = skill.querySelector('.fill');
-    const percent = skill.getAttribute('data-percent');
-    fill.style.width = percent + '%';
-  });
-});
+let animated = false;
+const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !animated) {
+            document.querySelectorAll('.skill').forEach(skill => {
+                const fill = skill.querySelector('.fill');
+                const percent = skill.getAttribute('data-percent');
+                fill.style.width = percent + '%';
+            });
+            animated = true;
+        } else if (!entry.isIntersecting && animated) {
+            document.querySelectorAll('.fill').forEach(fill => {
+                fill.style.width = '0';
+            });
+            animated = false;
+        }
+    });
+}, { threshold: 0.4 });
 
-skillsSection.addEventListener('mouseleave', () => {
-  document.querySelectorAll('.fill').forEach(fill => {
-    fill.style.width = '0';
-  });
-});
+skillsObserver.observe(skillsSection);
 
 // Reviews
 const reviews = [

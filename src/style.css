@@ -1233,14 +1233,33 @@ form button[type="submit"]:hover {
     flex-direction: row;
     justify-content: center;
   }
-
-  .sidebar {
+.projects-container {
     flex-direction: column;
     align-items: center;
   }
-
-  .categories liv {
-    flex-direction: column;
-    align-items: center;
+.recent-projects h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
   }
+  .project-card {
+    max-width: 100%;
+  }
+}
+.sidebar {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    width: 100%;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+  width: 100%;
+}
+
+.categories li {
+   font-size: 10px;
 }

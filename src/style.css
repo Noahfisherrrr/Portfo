@@ -16,8 +16,8 @@ a {
     height: auto;
     overflow: hidden;
     background-color: #DDDDDD;
-}
-.header {
+
+    & .header {
     max-width: 1920px;
     width: 100%;
     display: flex;
@@ -25,7 +25,10 @@ a {
     align-items: center;
     padding: 20px 50px;
     margin: 0 auto;
+  }
+
 }
+
 .roca {
     font-family: 'Poppins';
     font-size: 40px;
@@ -561,6 +564,7 @@ form button[type="submit"]:hover {
 .projects-container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
@@ -591,6 +595,7 @@ form button[type="submit"]:hover {
     list-style: none;
     padding: 0;
     margin: 0;
+   
 }
 
 .categories li {
@@ -634,12 +639,17 @@ form button[type="submit"]:hover {
     
 }
 
+
 .project-image img {
     max-width: 450px;
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+}
+
+.overlay{
+  padding: 0 40px 0 40px;
 }
 
 .project-image .overlay {
@@ -661,6 +671,8 @@ form button[type="submit"]:hover {
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
+    padding-bottom: 10px;
+    text-align: center;
 }
 
 .project-card:hover .overlay {
@@ -672,104 +684,7 @@ form button[type="submit"]:hover {
     transform: scale(1.1);
 }
 
-/* articles */
-.latest-articles {
-    max-width: 1920px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin: 50px auto;
-    padding: 20px;
-}
-.latest-articles h2 {
-    font-family: 'Glacial Indifference';
-    font-size: 70px;
-    font-weight: 800;
-    color: #2E2E2E;
-    margin-bottom: 50px;
-    text-align: center;
-}
-.articles-content-container {
-    max-width: 1640px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.article-container {
-    display: flex;
-    justify-content: right;
-    
-}
-.empty-space {
-    max-width: 110px;
-    width: 100%;
-}
-.article-float {
-    display: flex;
-    justify-content: left;
-    flex-direction: row-reverse;
 
-    
-}
-.article-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 650px;
-    min-height: 560px;
-    width: 100%;
-    overflow: hidden;
-    padding: 15px;
-    background-color: #fafafa;
-
-}
-.article-info h3 {
-    font-family: 'Glacial Indifference';
-    font-size: 30px;
-    font-weight: 700;
-    color: #2E2E2E;
-    margin-top: 20px;
-}
-.article-container p {
-    font-family: 'Muli';
-    font-size: 16px;
-    color: #555555;
-    margin-top: 10px;
-}
-.year {
-    background-color: #15263E;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    max-width: 120px;
-    width: 100%;
-    height: auto;
-}
-.year span{
-    font-family: 'Glacial Indifference';
-    font-size: 30px;
-    font-weight: 700;
-    text-align: center;
-    color: #E93656;
-    transform: rotate(180deg);
-    writing-mode: vertical-rl;
-
-
-}
-.article-image {
-    max-width: 675px;
-    width: 100%;
-    height: 560px;
-    object-fit: cover;
-}
-.article-image img {
-    max-width: 675px;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 /* partners */
 .partners {
     max-width: 1920px;
